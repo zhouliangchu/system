@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../../css/common/bootstrap.css">
+    <link rel="stylesheet" href="../../css/common/reset.css">
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/system/index.css">
+</head>
+<body ng-app="myapp">
+    <div class="content clearfix" ng-controller="sysCon">
+        <div class="right">
+            <div class="right-content">
+                <!--头部-->
+                <div class="title clearfix">
+                    <div class="title-left">
+                        <ul>
+                            <li>个人中心</li>
+                            <li>系统设置</li>
+                        </ul>
+                    </div>
+                    <div class="title-right">
+                        <ul class="dropdown">
+                            <span class="dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">
+                                选项 <span class="caret"></span>
+                            </span>
+                        </ul>
+                    </div>
+                </div>
+                <div ui-view></div>
+            </div>
+        </div>
+        <div class="left">
+            <div class="title">通用权限系统</div>
+            <div class="work">我的工作台</div>
+            <h5 class="can">权限管理</h5>
+            <nav>
+                <ul>
+                    <li ui-sref="add">添加用户</li>
+                    <li class="current" ui-sref="user">用户管理</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="mark" ng-show="boll">
+            <div class="dialog">
+                <ul>
+                    <li>
+                        <span>ID：</span>
+                        <input type="text" value="{{tar.ID}}" ng-model="tar.ID" disabled>
+                    </li>
+                    <li>
+                        <span>parentid：</span>
+                        <input type="text" value="{{tar.parentid}}" ng-model="tar.parentid" disabled>
+                    </li>
+                    <li>
+                        <span>登录名：</span>
+                        <input type="text" value="{{tar.loginname}}" ng-model="tar.loginname">
+                    </li>
+                    <li>
+                        <span>真实姓名：</span>
+                        <input type="text" value="{{tar.name}}" ng-model="tar.name">
+                    </li>
+                    <li>
+                        <span>角色：</span>
+                        <input type="text" value="{{tar.role}}" ng-model="tar.role">
+                    </li>
+                    <li>
+                        <span>手机：</span>
+                        <input type="text" value="{{tar.telephone}}" ng-model="tar.telephone">
+                    </li>
+                    <li>
+                        <span>邮箱：</span>
+                        <input type="text" value="{{tar.email}}" ng-model="tar.email">
+                    </li>
+                    <li>
+                        <span>状态：</span>
+                        <select ng-model="tar.state">
+                            <option>禁用</option>
+                            <option>启用</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>创建时间：</span>
+                        <input type="text" value="{{tar.creattime}}" ng-model="tar.creattime" disabled>
+                    </li>
+                    <li>
+                        <button ng-click="sure()">确定</button>
+                        <button ng-click="no()">取消</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/common/jquery.js"></script>
+    <script src="../../js/common/angular.js"></script>
+    <script src="../../js/common/angular-ui-router.js"></script>
+    <script src="../../js/system/index.js"></script>
+</body>
+</html>

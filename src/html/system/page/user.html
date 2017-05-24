@@ -1,0 +1,56 @@
+<div class="main">
+    <!--用户管理-->
+    <h5>用户管理</h5>
+    <!--查询栏-->
+    <div class="search">
+        <span>角色</span>
+        <select ng-model="type" ng-init="type='管理员'">
+            <option>管理员</option>
+            <option>13管理员aaa</option>
+            <option>13管理</option>
+        </select>
+        <span>状态</span>
+        <select ng-model="can">
+            <option value="全部">全部</option>
+            <option value="启用">启用</option>
+            <option value="禁用">禁用</option>
+        </select>
+        <span>登录名</span>
+        <input type="text" ng-model="search.loginname">
+        <button>查询</button>
+    </div>
+    <!--列表-->
+    <div class="list">列表</div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>登录名</th>
+                <th>真实姓名</th>
+                <th>角色</th>
+                <th>手机</th>
+                <th>邮箱</th>
+                <th>状态</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr ng-repeat="item in data | filter:type | filter:can | filter:search">
+                <td>{{item.ID}}</td>
+                <td>{{item.loginname}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.role}}</td>
+                <td>{{item.telephone}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.state}}</td>
+                <td>{{item.creattime}}</td>
+                <td>
+                    <span ng-click="update(item.ID)">修改</span>
+                    <span ng-click="remove(item.ID)">删除</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <page></page>
+</div>

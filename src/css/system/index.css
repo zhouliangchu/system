@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.content {
+  width: 100%;
+  height: 600px; }
+  .content .left {
+    width: 200px;
+    height: 600px;
+    float: left;
+    position: relative;
+    margin-left: -100%;
+    line-height: 30px;
+    border-right: 1px solid #ccc; }
+    .content .left .title {
+      height: 30px;
+      background-color: #007aff;
+      color: #fff;
+      text-align: center; }
+    .content .left .work, .content .left .can, .content .left nav li {
+      padding-left: 20px; }
+    .content .left .work {
+      font-size: 16px;
+      color: #666; }
+    .content .left .can {
+      font-weight: bold; }
+    .content .left nav .current {
+      background-color: #007aff;
+      color: #fff; }
+  .content .right {
+    width: 100%;
+    height: 600px;
+    float: left; }
+    .content .right .right-content {
+      padding-left: 200px; }
+      .content .right .right-content .title {
+        height: 30px;
+        background-color: #007aff;
+        color: #fff; }
+        .content .right .right-content .title .title-left {
+          float: left; }
+          .content .right .right-content .title .title-left ul li {
+            width: 80px;
+            display: inline-block;
+            text-align: center;
+            line-height: 30px; }
+        .content .right .right-content .title .title-right {
+          float: right;
+          margin-top: 7px;
+          margin-right: 10px; }
+          .content .right .right-content .title .title-right .dropdown .dropdown-toggle {
+            color: #fff; }
+      .content .right .right-content .main {
+        padding-left: 20px; }
+        .content .right .right-content .main h5 {
+          padding-top: 20px;
+          font-weight: bold; }
+        .content .right .right-content .main .search {
+          padding-top: 10px; }
+          .content .right .right-content .main .search button {
+            width: 50px; }
+        .content .right .right-content .main .list {
+          line-height: 40px;
+          font-size: 14px;
+          color: #0074d9;
+          font-weight: bold; }
+        .content .right .right-content .main .total {
+          display: -webkit-flex; }
+          .content .right .right-content .main .total p {
+            -webkit-flex: 1; }
+          .content .right .right-content .main .total .pages {
+            -webkit-flex: 1;
+            display: flex; }
+            .content .right .right-content .main .total .pages button {
+              width: 50px;
+              height: 24px;
+              margin-left: 0.1rem;
+              margin-right: 0.1rem; }
+            .content .right .right-content .main .total .pages .page {
+              -webkit-flex: 1;
+              text-align: center;
+              display: -webkit-flex; }
+              .content .right .right-content .main .total .pages .page li {
+                width: 24px;
+                height: 24px;
+                margin-left: 10px;
+                text-align: center;
+                line-height: 24px;
+                border: 1px solid #333; }
+          .content .right .right-content .main .total .num {
+            -webkit-flex: 1;
+            margin: 0 auto; }
+            .content .right .right-content .main .total .num input {
+              width: 0.6rem; }
+
+td input {
+  width: 80px; }
+
+table {
+  width: 100%;
+  margin-bottom: 20px; }
+  table tr {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ccc; }
+    table tr th, table tr td {
+      width: 120px;
+      text-align: center; }
+
+.add {
+  width: 100px;
+  height: 30px;
+  margin-left: 40%; }
+
+.mark {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.43); }
+  .mark .dialog {
+    width: 300px;
+    height: 400px;
+    background-color: #c4e3f3;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    top: 50%;
+    margin-top: -200px; }
+    .mark .dialog ul {
+      margin-top: 20px;
+      margin-left: 50px; }
+      .mark .dialog ul li {
+        margin-top: 15px; }
+        .mark .dialog ul li span {
+          display: inline-block;
+          width: 60px; }
+        .mark .dialog ul li button {
+          width: 60px;
+          height: 24px;
+          border: 1px solid #ccc;
+          margin-left: 24px;
+          background-color: #39cccc;
+          color: #fff; }
+
+/*# sourceMappingURL=index.css.map */

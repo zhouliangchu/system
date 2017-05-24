@@ -1,0 +1,151 @@
+*
+  margin: 0
+  padding: 0
+
+.content
+  width: 100%
+  height: 600px
+  .left
+    width: 200px
+    height: 600px
+    float: left
+    position: relative
+    margin-left: -100%
+    line-height: 30px
+    border-right: 1px solid #ccc
+    .title
+      height: 30px
+      background-color: #007aff
+      color: #fff
+      text-align: center
+    .work,.can,nav li
+      padding-left: 20px
+    .work
+      font-size: 16px
+      color: #666
+    .can
+      font-weight: bold
+    nav
+      .current
+        background-color: #007aff
+        color: #fff
+  .right
+    width: 100%
+    height: 600px
+    float: left
+    .right-content
+      padding-left: 200px
+      .title
+        height: 30px
+        background-color: #007aff
+        color: #fff
+        .title-left
+          float: left
+          ul
+            li
+              width: 80px
+              display: inline-block
+              text-align: center
+              line-height: 30px
+        .title-right
+          float: right
+          margin-top: 7px
+          margin-right: 10px
+          .dropdown
+            .dropdown-toggle
+              color: #fff
+      .main
+        padding-left: 20px
+        h5
+          padding-top: 20px
+          font-weight: bold
+        .search
+          padding-top: 10px
+          button
+            width: 50px
+        .list
+          line-height: 40px
+          font-size: 14px
+          color: #0074d9
+          font-weight: bold
+        .total
+          display: -webkit-flex
+          p
+            -webkit-flex: 1
+          .pages
+            -webkit-flex: 1
+            display: flex
+            button
+              width: 50px
+              height: 24px
+              margin-left: .1rem
+              margin-right: .1rem
+            .page
+              -webkit-flex: 1
+              text-align: center
+              display: -webkit-flex
+              li
+                width: 24px
+                height: 24px
+                margin-left: 10px
+                text-align: center
+                line-height: 24px
+                border: 1px solid #333
+          .num
+            -webkit-flex: 1
+            margin: 0 auto
+            input
+              width: .6rem
+
+td
+  input
+    width: 80px
+
+table
+  width: 100%
+  margin-bottom: 20px
+  tr
+    width: 100%
+    height: 40px
+    line-height: 40px
+    border-bottom: 1px solid #ccc
+    th,td
+      width: 120px
+      text-align: center
+
+.add
+  width: 100px
+  height: 30px
+  margin-left: 40%
+
+.mark
+  position: absolute
+  top: 0
+  bottom: 0
+  width: 100%
+  background: rgba(0, 0, 0, 0.43)
+  .dialog
+    width: 300px
+    height: 400px
+    background-color: #c4e3f3
+    position: absolute
+    left: 50%
+    margin-left: -150px
+    top: 50%
+    margin-top: -200px
+    ul
+      margin-top: 20px
+      margin-left: 50px
+      li
+        margin-top: 15px
+        span
+          display: inline-block
+          width: 60px
+        button
+          width: 60px
+          height: 24px
+          border: 1px solid #ccc
+          margin-left: 24px
+          background-color: #39cccc
+          color: #fff
+
