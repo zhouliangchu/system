@@ -9,6 +9,19 @@ app.controller('sysCon', function($scope,alldata){
     $scope.boll = false;
     $scope.pages = []; // 存放每一页的页数
     $scope.pageSize = 2; // 每页显示的行数
+    $scope.num = $scope.data.length;// 总共有几条数据
+    $scope.page = 0; // 总页数
+
+    // 总共有多少页
+    if($scope.num/$scope.pageSize > parseInt($scope.num/$scope.pageSize)){
+        $scope.page = parseInt($scope.num/$scope.pageSize)+1;
+    }else{
+        $scope.page = parseInt($scope.num/$scope.pageSize);
+    }
+
+    for(var i=1;i<$scope.page+1;i++){
+        $scope.pages.push(i);
+    }
 
     // 点击添加用户、用户管理时切换当前状态
     $('nav ul li').on('click', function(){
@@ -114,19 +127,8 @@ app.directive('page', function(){
         template: '<div class="total"><p>总共有<span></span>条数据</p><div class="pages"><button>上一页</button><ul class="page"><li ng-repeat="item in pages track by $index">{{item}}</li></ul><button>下一页</button></div><div class="num">第<input type="text">页</div></div>',
         link: function(scope,iElement,iAttrs){
             var currentPage = 1; // 当前页
-            var page = 0; // 总页数
-            var num = scope.data.length;// 总共有几条数据
 
-            // 总共有多少页
-            if(num/scope.pageSize > parseInt(num/scope.pageSize)){
-                page = parseInt(num/scope.pageSize)+1;
-            }else{
-                page = parseInt(num/scope.pageSize);
-            }
 
-            for(var i=1;i<page+1;i++){
-                scope.pages.push(i);
-            }
 
             // console.log(scope.pages)
 
@@ -140,7 +142,7 @@ app.directive('page', function(){
                 // 当前页显示的最后一条数据
                 endR = currentPage*scope.pageSize;
                 // 判断当前页显示的最后一条数据的行数是否超过了总数据的行数
-                endR = (endR>num) ? num : endR;
+                endR = (endR>scope.num) ? scope.num : endR;
 
                 setTimeout(function(){
                     $('thead tr').css('display','block');
