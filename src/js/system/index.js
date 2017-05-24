@@ -11,6 +11,7 @@ app.controller('sysCon', function($scope,alldata){
     $scope.pageSize = 2; // 每页显示的行数
     $scope.num = $scope.data.length;// 总共有几条数据
     $scope.page = 0; // 总页数
+    $scope.currentPage = 1; // 当前页
 
     // 总共有多少页
     if($scope.num/$scope.pageSize > parseInt($scope.num/$scope.pageSize)){
@@ -124,23 +125,19 @@ app.directive('page', function(){
     return {
         restrict: 'E',
         replace: true,
-        template: '<div class="total"><p>总共有<span></span>条数据</p><div class="pages"><button>上一页</button><ul class="page"><li ng-repeat="item in pages track by $index">{{item}}</li></ul><button>下一页</button></div><div class="num">第<input type="text">页</div></div>',
+        template: '<div class="total"><p>总共有<span>{{num}}</span>条数据</p><div class="pages"><button class="prev">上一页</button><ul class="page"><li ng-repeat="item in pages track by $index">{{item}}</li></ul><button class="next">下一页</button></div><div class="num">第<input class="numPage" type="number" ng-model="currentPage">页</div></div>',
         link: function(scope,iElement,iAttrs){
-            var currentPage = 1; // 当前页
-
-
-
             // console.log(scope.pages)
 
-            // 点击至哪一页
+            // 当前显示哪几行数据
             function pageTo(pNow){
 
                 // 当前显示的页数
-                currentPage = pNow;
+                scope.currentPage = pNow;
                 // 当前页显示的第一条数据
-                startR = (currentPage-1)*scope.pageSize+1;
+                startR = (scope.currentPage-1)*scope.pageSize+1;
                 // 当前页显示的最后一条数据
-                endR = currentPage*scope.pageSize;
+                endR = scope.currentPage*scope.pageSize;
                 // 判断当前页显示的最后一条数据的行数是否超过了总数据的行数
                 endR = (endR>scope.num) ? scope.num : endR;
 
@@ -158,18 +155,59 @@ app.directive('page', function(){
             pageTo(1);
 
             setTimeout(function(){
-
+                var fir = $($(iElement).find('li')[0]);
+                // 设置默认选中页
+                fir.addClass('now');
+                // 点击跳转至哪一页事件
                 $(iElement).find('li').each( function(i,ele){
 
                     $(this).on('click', function(){
                         var ind = i+1;
-
+                        $(this).addClass('now').siblings().removeClass('now');
                         scope.$apply(function(){
                             pageTo(ind);
-
                         });
                     })
                 });
+
+                // 当选框的页数改变时进行跳转
+                $('.numPage').on('change',function(){
+                    var nums = Number($(this).val());
+                    scope.$apply(function(){
+                        pageTo(nums);
+                        $($(iElement).find('li')[nums-1]).addClass('now').siblings().removeClass('now');
+                    });
+                });
+            });
+
+            // 点击下一页
+            $('.next').on('click', function(){
+                if(scope.currentPage < scope.page){
+                    scope.$apply(function(){
+                        scope.currentPage++;
+                    });
+                }else{
+                    scope.$apply(function(){
+                        scope.currentPage = scope.page;
+                    });
+                }
+                pageTo(scope.currentPage);
+                $($(iElement).find('li')[scope.currentPage-1]).addClass('now').siblings().removeClass('now');
+            });
+
+            // 点击上一页
+            $('.prev').on('click', function(){
+                if(scope.currentPage > 1){
+                    scope.$apply(function(){
+                        scope.currentPage--;
+                    });
+                }else{
+                    scope.$apply(function(){
+                        scope.currentPage = 1;
+                    });
+                }
+                pageTo(scope.currentPage);
+                $($(iElement).find('li')[scope.currentPage-1]).addClass('now').siblings().removeClass('now');
             });
 
         }

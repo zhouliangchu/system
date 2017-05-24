@@ -6,7 +6,7 @@
   width: 100%;
   height: 600px; }
   .content .left {
-    width: 200px;
+    width: 120px;
     height: 600px;
     float: left;
     position: relative;
@@ -33,7 +33,7 @@
     height: 600px;
     float: left; }
     .content .right .right-content {
-      padding-left: 200px; }
+      padding-left: 120px; }
       .content .right .right-content .title {
         height: 30px;
         background-color: #007aff;
@@ -69,6 +69,10 @@
           display: -webkit-flex; }
           .content .right .right-content .main .total p {
             -webkit-flex: 1; }
+            .content .right .right-content .main .total p span {
+              font-size: 14px;
+              margin-left: 5px;
+              margin-right: 5px; }
           .content .right .right-content .main .total .pages {
             -webkit-flex: 1;
             display: flex; }
@@ -88,6 +92,9 @@
                 text-align: center;
                 line-height: 24px;
                 border: 1px solid #333; }
+              .content .right .right-content .main .total .pages .page .now {
+                background-color: #0074d9;
+                color: #fff; }
           .content .right .right-content .main .total .num {
             -webkit-flex: 1;
             margin: 0 auto; }
@@ -102,11 +109,11 @@ table {
   margin-bottom: 20px; }
   table tr {
     width: 100%;
-    height: 40px;
-    line-height: 40px;
     border-bottom: 1px solid #ccc; }
     table tr th, table tr td {
-      width: 120px;
+      width: 140px;
+      padding-top: 16px;
+      padding-bottom: 16px;
       text-align: center; }
 
 .add {
