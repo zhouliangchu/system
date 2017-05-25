@@ -43,61 +43,14 @@
                 </ul>
             </nav>
         </div>
-        <div class="mark" ng-show="boll">
-            <div class="dialog">
-                <ul>
-                    <li>
-                        <span>ID：</span>
-                        <input type="text" value="{{tar.ID}}" ng-model="tar.ID" disabled>
-                    </li>
-                    <li>
-                        <span>parentid：</span>
-                        <input type="text" value="{{tar.parentid}}" ng-model="tar.parentid" disabled>
-                    </li>
-                    <li>
-                        <span>登录名：</span>
-                        <input type="text" value="{{tar.loginname}}" ng-model="tar.loginname">
-                    </li>
-                    <li>
-                        <span>真实姓名：</span>
-                        <input type="text" value="{{tar.name}}" ng-model="tar.name">
-                    </li>
-                    <li>
-                        <span>角色：</span>
-                        <input type="text" value="{{tar.role}}" ng-model="tar.role">
-                    </li>
-                    <li>
-                        <span>手机：</span>
-                        <input type="text" value="{{tar.telephone}}" ng-model="tar.telephone">
-                    </li>
-                    <li>
-                        <span>邮箱：</span>
-                        <input type="text" value="{{tar.email}}" ng-model="tar.email">
-                    </li>
-                    <li>
-                        <span>状态：</span>
-                        <select ng-model="tar.state">
-                            <option>禁用</option>
-                            <option>启用</option>
-                        </select>
-                    </li>
-                    <li>
-                        <span>创建时间：</span>
-                        <input type="text" value="{{tar.creattime}}" ng-model="tar.creattime" disabled>
-                    </li>
-                    <li>
-                        <button ng-click="sure()">确定</button>
-                        <button ng-click="no()">取消</button>
-                    </li>
-                </ul>
 
-            </div>
-        </div>
     </div>
 
     <script src="../../js/common/jquery.js"></script>
     <script src="../../js/common/angular.js"></script>
     <script src="../../js/common/angular-ui-router.js"></script>
     <script src="../../js/system/index.js"></script>
+    <script src="../../../data/system.js"></script>
+    <script src="../../js/system/page.js"></script>
 </body>
 </html>

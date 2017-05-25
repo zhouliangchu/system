@@ -6,7 +6,7 @@
   width: 100%;
   height: 600px; }
   .content .left {
-    width: 120px;
+    width: 200px;
     height: 600px;
     float: left;
     position: relative;
@@ -33,7 +33,7 @@
     height: 600px;
     float: left; }
     .content .right .right-content {
-      padding-left: 120px; }
+      padding-left: 200px; }
       .content .right .right-content .title {
         height: 30px;
         background-color: #007aff;
@@ -65,41 +65,6 @@
           font-size: 14px;
           color: #0074d9;
           font-weight: bold; }
-        .content .right .right-content .main .total {
-          display: -webkit-flex; }
-          .content .right .right-content .main .total p {
-            -webkit-flex: 1; }
-            .content .right .right-content .main .total p span {
-              font-size: 14px;
-              margin-left: 5px;
-              margin-right: 5px; }
-          .content .right .right-content .main .total .pages {
-            -webkit-flex: 1;
-            display: flex; }
-            .content .right .right-content .main .total .pages button {
-              width: 50px;
-              height: 24px;
-              margin-left: 0.1rem;
-              margin-right: 0.1rem; }
-            .content .right .right-content .main .total .pages .page {
-              -webkit-flex: 1;
-              text-align: center;
-              display: -webkit-flex; }
-              .content .right .right-content .main .total .pages .page li {
-                width: 24px;
-                height: 24px;
-                margin-left: 10px;
-                text-align: center;
-                line-height: 24px;
-                border: 1px solid #333; }
-              .content .right .right-content .main .total .pages .page .now {
-                background-color: #0074d9;
-                color: #fff; }
-          .content .right .right-content .main .total .num {
-            -webkit-flex: 1;
-            margin: 0 auto; }
-            .content .right .right-content .main .total .num input {
-              width: 0.6rem; }
 
 td input {
   width: 80px; }
@@ -109,11 +74,11 @@ table {
   margin-bottom: 20px; }
   table tr {
     width: 100%;
+    height: 40px;
+    line-height: 40px;
     border-bottom: 1px solid #ccc; }
     table tr th, table tr td {
-      width: 140px;
-      padding-top: 16px;
-      padding-bottom: 16px;
+      width: 120px;
       text-align: center; }
 
 .add {
@@ -121,35 +86,54 @@ table {
   height: 30px;
   margin-left: 40%; }
 
-.mark {
+.dialog {
+  width: 300px;
+  height: 400px;
+  background-color: #c4e3f3;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.43); }
-  .mark .dialog {
-    width: 300px;
-    height: 400px;
-    background-color: #c4e3f3;
-    position: absolute;
-    left: 50%;
-    margin-left: -150px;
-    top: 50%;
-    margin-top: -200px; }
-    .mark .dialog ul {
-      margin-top: 20px;
-      margin-left: 50px; }
-      .mark .dialog ul li {
-        margin-top: 15px; }
-        .mark .dialog ul li span {
-          display: inline-block;
-          width: 60px; }
-        .mark .dialog ul li button {
-          width: 60px;
-          height: 24px;
-          border: 1px solid #ccc;
-          margin-left: 24px;
-          background-color: #39cccc;
-          color: #fff; }
+  left: 50%;
+  margin-left: -150px;
+  top: 50%;
+  margin-top: -200px; }
+  .dialog ul {
+    margin-top: 20px;
+    margin-left: 50px; }
+    .dialog ul li {
+      margin-top: 15px; }
+      .dialog ul li span {
+        display: inline-block;
+        width: 60px; }
+      .dialog ul li button {
+        width: 60px;
+        height: 24px;
+        border: 1px solid #ccc;
+        margin-left: 24px;
+        background-color: #39cccc;
+          background-color-color: #fff; }
+
+.page {
+  margin-bottom: 20px; }
+  .page button {
+    width: 60px;
+    height: 24px;
+    background-color: transparent;
+    border: 1px solid #666;
+    margin-left: 10px;
+    margin-right: 10px; }
+  .page span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 22px;
+    border: 1px solid #666;
+    margin-right: 2px; }
+  .page .current {
+    background-color: #0074d9;
+    color: #fff; }
+  .page input {
+    width: 60px;
+    margin-left: 5px;
+    margin-right: 5px; }
 
 /*# sourceMappingURL=index.css.map */

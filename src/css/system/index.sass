@@ -6,7 +6,7 @@
   width: 100%
   height: 600px
   .left
-    width: 120px
+    width: 200px
     height: 600px
     float: left
     position: relative
@@ -34,7 +34,7 @@
     height: 600px
     float: left
     .right-content
-      padding-left: 120px
+      padding-left: 200px
       .title
         height: 30px
         background-color: #007aff
@@ -68,41 +68,7 @@
           font-size: 14px
           color: #0074d9
           font-weight: bold
-        .total
-          display: -webkit-flex
-          p
-            -webkit-flex: 1
-            span
-              font-size: 14px
-              margin-left: 5px
-              margin-right: 5px
-          .pages
-            -webkit-flex: 1
-            display: flex
-            button
-              width: 50px
-              height: 24px
-              margin-left: .1rem
-              margin-right: .1rem
-            .page
-              -webkit-flex: 1
-              text-align: center
-              display: -webkit-flex
-              li
-                width: 24px
-                height: 24px
-                margin-left: 10px
-                text-align: center
-                line-height: 24px
-                border: 1px solid #333
-              .now
-                background-color: #0074d9
-                color: #fff
-          .num
-            -webkit-flex: 1
-            margin: 0 auto
-            input
-              width: .6rem
+
 
 td
   input
@@ -113,11 +79,11 @@ table
   margin-bottom: 20px
   tr
     width: 100%
+    height: 40px
+    line-height: 40px
     border-bottom: 1px solid #ccc
     th,td
-      width: 140px
-      padding-top: 16px
-      padding-bottom: 16px
+      width: 120px
       text-align: center
 
 .add
@@ -125,36 +91,53 @@ table
   height: 30px
   margin-left: 40%
 
-.mark
+
+.dialog
+  width: 300px
+  height: 400px
+  background-color: #c4e3f3
   position: absolute
-  top: 0
-  bottom: 0
-  width: 100%
-  background: rgba(0, 0, 0, 0.43)
-  .dialog
-    width: 300px
-    height: 400px
-    background-color: #c4e3f3
-    position: absolute
-    left: 50%
-    margin-left: -150px
-    top: 50%
-    margin-top: -200px
-    ul
-      margin-top: 20px
-      margin-left: 50px
-      li
-        margin-top: 15px
-        span
-          display: inline-block
-          width: 60px
-        button
-          width: 60px
-          height: 24px
-          border: 1px solid #ccc
-          margin-left: 24px
-          background-color: #39cccc
-          color: #fff
+  left: 50%
+  margin-left: -150px
+  top: 50%
+  margin-top: -200px
+  ul
+    margin-top: 20px
+    margin-left: 50px
+    li
+      margin-top: 15px
+      span
+        display: inline-block
+        width: 60px
+      button
+        width: 60px
+        height: 24px
+        border: 1px solid #ccc
+        margin-left: 24px
+        background-color: #39cccc
+        color: #fff
 
-
-
+.page
+  margin-bottom: 20px
+  button
+    width: 60px
+    height: 24px
+    background-color: transparent
+    border: 1px solid #666
+    margin-left: 10px
+    margin-right: 10px
+  span
+    display: inline-block
+    width: 24px
+    height: 24px
+    text-align: center
+    line-height: 22px
+    border: 1px solid #666
+    margin-right: 2px
+  .current
+    background-color: #0074d9
+    color: #fff
+  input
+    width: 60px
+    margin-left: 5px
+    margin-right: 5px

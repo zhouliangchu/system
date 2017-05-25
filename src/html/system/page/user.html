@@ -10,7 +10,7 @@
             <option>13管理</option>
         </select>
         <span>状态</span>
-        <select ng-model="can">
+        <select ng-model="can" ng-init="can='全部'">
             <option value="全部">全部</option>
             <option value="启用">启用</option>
             <option value="禁用">禁用</option>
@@ -36,7 +36,7 @@
             </tr>
         </thead>
         <tbody id="tbody">
-            <tr ng-repeat="item in data | filter:type | filter:can | filter:search">
+            <tr ng-repeat="item in cutData">
                 <td>{{item.ID}}</td>
                 <td>{{item.loginname}}</td>
                 <td>{{item.name}}</td>
@@ -52,5 +52,66 @@
             </tr>
         </tbody>
     </table>
-    <page></page>
-</div>
+    <div class="page">  
+        <button ng-click="updownPage('-')">上一页</button>
+        <!--第一页始终显示-->
+        <span ng-class="{current:(index+1) == 1}" ng-click="changeIndex(1)">1</span>
+        <span ng-show="topMore">...</span>
+        <!--用来存放中间的页数，循环遍历存放页数的数组，将第二页至倒数第二页显示出来-->
+        <span ng-repeat="i in pageArr" ng-class="{current:(index+1) == i}" ng-click="changeIndex(i)" ng-show="showArr.indexOf(i) != -1">{{i}}</span>
+        <span ng-show="lastMore">...</span>
+        <!--用来存放最后一页，始终显示-->
+        <span ng-class="{current:(index+1) == allPage}" ng-click="changeIndex(allPage)">{{allPage}}</span>
+        <button ng-click="updownPage('+')">下一页</button>
+        第<input type="number" min="1" max="{{allPage}}" ng-change="changeValue()" ng-model="valueData">页
+    </div>
+
+        <div class="dialog" ng-if="boll">
+            <ul>
+                <li>
+                    <span>ID：</span>
+                    <input type="text" value="{{tar.ID}}" ng-model="tar.ID" disabled>
+                </li>
+                <li>
+                    <span>parentid：</span>
+                    <input type="text" value="{{tar.parentid}}" ng-model="tar.parentid" disabled>
+                </li>
+                <li>
+                    <span>登录名：</span>
+                    <input type="text" value="{{tar.loginname}}" ng-model="tar.loginname">
+                </li>
+                <li>
+                    <span>真实姓名：</span>
+                    <input type="text" value="{{tar.name}}" ng-model="tar.name">
+                </li>
+                <li>
+                    <span>角色：</span>
+                    <input type="text" value="{{tar.role}}" ng-model="tar.role">
+                </li>
+                <li>
+                    <span>手机：</span>
+                    <input type="text" value="{{tar.telephone}}" ng-model="tar.telephone">
+                </li>
+                <li>
+                    <span>邮箱：</span>
+                    <input type="text" value="{{tar.email}}" ng-model="tar.email">
+                </li>
+                <li>
+                    <span>状态：</span>
+                    <select ng-model="tar.state">
+                        <option>禁用</option>
+                        <option>启用</option>
+                    </select>
+                </li>
+                <li>
+                    <span>创建时间：</span>
+                    <input type="text" value="{{tar.creattime}}" ng-model="tar.creattime" disabled>
+                </li>
+                <li>
+                    <button ng-click="sure()">确定</button>
+                    <button ng-click="no()">取消</button>
+                </li>
+            </ul>
+
+        </div>
+    </div>

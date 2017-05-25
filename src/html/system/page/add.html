@@ -15,10 +15,21 @@
         <tr>
             <td><input type="text" ng-model="add.loginname"></td>
             <td><input type="text" ng-model="add.name"></td>
-            <td><input type="text" ng-model="add.role"></td>
+            <td>
+                <select ng-model="add.role" ng-init="add.role='管理员'">
+                    <option>管理员</option>
+                    <option>13管理员aaa</option>
+                    <option>13管理</option>
+                </select>
+            </td>
             <td><input type="text" ng-model="add.telephone"></td>
             <td><input type="text" ng-model="add.email"></td>
-            <td><input type="text" ng-model="add.state"></td>
+            <td>
+                <select ng-model="add.state" ng-init="add.state='启用'">
+                    <option>启用</option>
+                    <option>禁用</option>
+                </select>
+            </td>
         </tr>
         </tbody>
     </table>
