@@ -20,6 +20,7 @@ app.service('page', function(){
         // 点击每一页通过页码判断所要显示的数据
         $scope.changeIndex = function(i){
             $scope.pageShow(i);
+            $('.page input').val(i);
         };
 
         // 当前显示哪几页
@@ -92,10 +93,9 @@ app.service('page', function(){
         };
 
         // 当输入框的值改变时跳至相应页数
-        $scope.valueData = 1;
         $scope.changeValue = function(){
-            $scope.pageShow($scope.valueData);
-            console.log($scope.valueData)
+            $scope.value = $('.page input').val();
+            $scope.pageShow($scope.value);
         };
 
         // 点击上一页下一页
@@ -103,9 +103,11 @@ app.service('page', function(){
             if(i == '+'){
                 if($scope.index+1 < $scope.allPage){
                     $scope.pageShow($scope.index+2);
+                    $('.page input').val($scope.index+1);
                 }
             }else{
                 if($scope.index > 0){
+                    $('.page input').val($scope.index);
                     $scope.pageShow($scope.index);
                 }
             }
