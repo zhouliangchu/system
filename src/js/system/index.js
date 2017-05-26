@@ -5,6 +5,7 @@ var app = angular.module('myapp',['ui.router']);
 var num = 100;
 
 app.controller('sysCon', function($scope,alldata,page){
+    $scope.data = alldata.thirdata;
     // 拿到原始数据并保存到一个函数中，调用此函数即可得到原始数据
     $scope.fileData = function(){
         // map方法返回一个新的对象
@@ -13,16 +14,11 @@ app.controller('sysCon', function($scope,alldata,page){
         })
     };
 
-    $scope.data = alldata.thirdata;
-
     // 分页
     // 定义每一页显示数据的长度
     $scope.dataNum = 2;
     // 定义中间页显示的页数，只能为奇数
     $scope.midPage = 5;
-
-    // 调用分页的服务，并将$scope作为参数传递过去
-    page($scope);
 
     // 点击添加用户、用户管理时切换当前状态
     $('nav ul li').on('click', function(){
@@ -31,14 +27,16 @@ app.controller('sysCon', function($scope,alldata,page){
 
     // 接收子控制器派发过来的新添加的数据，并添加到数据中
     $scope.$on('addDate', function(e,d){
-        $scope.cutData.push(d.data);
+        $scope.data.push(d.data);
+        page($scope);
     });
 
     // 删除用户
     $scope.remove = function(id){
-        $scope.cutData.forEach(function(ele,i){
+        $scope.data.forEach(function(ele,i){
             if(ele.ID == id){
-                $scope.cutData.splice(i,1);
+                $scope.data.splice(i,1);
+                page($scope);
                 // console.log(i);
             }
         })
@@ -48,7 +46,7 @@ app.controller('sysCon', function($scope,alldata,page){
     $scope.update = function(id){
         $scope.boll = true;
 
-        $scope.cutData.forEach(function(ele,i){
+        $scope.data.forEach(function(ele,i){
 
             if(ele.ID == id){
                 $scope.tar = {};
@@ -63,9 +61,10 @@ app.controller('sysCon', function($scope,alldata,page){
     $scope.sure = function(){
         $scope.boll = false;
 
-        $scope.cutData.forEach(function(ele,index){
+        $scope.data.forEach(function(ele,index){
             if(ele.ID == $scope.tar.ID){
-                $scope.cutData[index] = $scope.tar
+                $scope.data[index] = $scope.tar;
+                page($scope);
             }
         })
     };
@@ -75,6 +74,9 @@ app.controller('sysCon', function($scope,alldata,page){
         $scope.boll = false;
         // $scope.cutData = alldata.thirdata;
     };
+
+    // 调用分页的服务，并将$scope作为参数传递过去
+    page($scope);
 
 });
 
