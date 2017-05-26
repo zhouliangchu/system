@@ -58,7 +58,7 @@
           font-weight: bold; }
         .content .right .right-content .main .search {
           padding-top: 10px; }
-          .content .right .right-content .main .search button {
+          .content .right .right-content .main .search .search-btn {
             width: 50px; }
         .content .right .right-content .main .list {
           line-height: 40px;
@@ -109,7 +109,7 @@ table {
         border: 1px solid #ccc;
         margin-left: 24px;
         background-color: #39cccc;
-          background-color-color: #fff; }
+        color: #fff; }
 
 .page {
   margin-bottom: 20px; }

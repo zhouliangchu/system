@@ -6,6 +6,7 @@ app.service('page', function(){
     return function($scope){
         // 将$scope作为一个参数传入到服务中，此服务将能使用控制其中的所有属性和方法
         // console.log($scope.fileData());
+        $scope.lastBoll = true;
 
         // 重新定义一个变量用来存储原始数据
         var oldData = $scope.fileData();
@@ -78,6 +79,9 @@ app.service('page', function(){
             if($scope.allPage <= 6){
                 $scope.topMore = false;
                 $scope.lastMore = false;
+            }
+            if($scope.allPage <= 1){
+                $scope.lastBoll = false;
             }
 
             // 每一页要显示的数据
