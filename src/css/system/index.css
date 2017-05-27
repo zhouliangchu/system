@@ -2,91 +2,119 @@
   margin: 0;
   padding: 0; }
 
+header .title {
+  width: 100%;
+  height: 36px;
+  background-color: #007aff;
+  color: #fff;
+  line-height: 36px;
+  display: -webkit-flex; }
+  header .title p {
+    width: 140px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    font-size: 14px;
+    font-weight: bold; }
+  header .title .title-left {
+    -webkit-flex: 1; }
+    header .title .title-left ul li {
+      width: 80px;
+      display: inline-block;
+      text-align: center;
+      line-height: 30px; }
+      header .title .title-left ul li a {
+        color: #fff; }
+  header .title .title-right {
+    width: 120px;
+    text-align: center; }
+    header .title .title-right .dropdown .dropdown-toggle {
+      color: #fff; }
+
 .content {
   width: 100%;
-  height: 600px; }
-  .content .left {
-    width: 200px;
-    height: 600px;
-    float: left;
-    position: relative;
-    margin-left: -100%;
-    line-height: 30px;
-    border-right: 1px solid #ccc; }
-    .content .left .title {
-      height: 30px;
-      background-color: #007aff;
+  height: 600px;
+  display: -webkit-flex; }
+
+aside {
+  width: 140px;
+  height: 600px;
+  line-height: 30px;
+  border-right: 1px solid #ccc; }
+  aside .work, aside .can, aside nav li {
+    padding-left: 20px; }
+  aside .work {
+    font-size: 14px;
+    color: #449d44;
+    line-height: 40px;
+    border-bottom: 1px solid #eee;
+    box-shadow: 1px 1px 2px #eee; }
+    aside .work span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #449d44;
       color: #fff;
-      text-align: center; }
-    .content .left .work, .content .left .can, .content .left nav li {
-      padding-left: 20px; }
-    .content .left .work {
-      font-size: 16px;
-      color: #666; }
-    .content .left .can {
-      font-weight: bold; }
-    .content .left nav .current {
-      background-color: #007aff;
-      color: #fff; }
-  .content .right {
+      font-size: 14px;
+      font-weight: bolder;
+      text-align: center;
+      line-height: 20px; }
+  aside .can {
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    line-height: 40px;
+    margin: 0; }
+    aside .can span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border: 1px solid #9d9d9d;
+      font-size: 6px;
+      color: #9d9d9d;
+      text-align: center;
+      line-height: 6px; }
+  aside nav ul li span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #9d9d9d;
+    border-radius: 50%; }
+  aside nav ul li a {
+    font-size: 14px; }
+  aside nav .current {
+    background-color: #007aff;
+    color: #fff; }
+
+.product {
+  -webkit-flex: 1;
+  height: 600px; }
+  .product .main {
     width: 100%;
     height: 600px;
-    float: left; }
-    .content .right .right-content {
-      padding-left: 200px; }
-      .content .right .right-content .title {
-        height: 30px;
-        background-color: #007aff;
-        color: #fff; }
-        .content .right .right-content .title .title-left {
-          float: left; }
-          .content .right .right-content .title .title-left ul li {
-            width: 80px;
-            display: inline-block;
-            text-align: center;
-            line-height: 30px; }
-        .content .right .right-content .title .title-right {
-          float: right;
-          margin-top: 7px;
-          margin-right: 10px; }
-          .content .right .right-content .title .title-right .dropdown .dropdown-toggle {
-            color: #fff; }
-      .content .right .right-content .main {
-        padding-left: 20px; }
-        .content .right .right-content .main h5 {
-          padding-top: 20px;
-          font-weight: bold; }
-        .content .right .right-content .main .search {
-          padding-top: 10px; }
-          .content .right .right-content .main .search .search-btn {
-            width: 50px; }
-        .content .right .right-content .main .list {
-          line-height: 40px;
-          font-size: 14px;
-          color: #0074d9;
-          font-weight: bold; }
+    padding-left: 20px; }
+    .product .main h5 {
+      padding-top: 20px;
+      font-weight: bold; }
+    .product .main .search {
+      padding-top: 10px; }
+      .product .main .search button {
+        width: 50px; }
+    .product .main .list {
+      line-height: 40px;
+      font-size: 14px;
+      color: #0074d9;
+      font-weight: bold; }
 
 td input {
   width: 80px; }
-
-table {
-  width: 100%;
-  margin-bottom: 20px; }
-  table tr {
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    border-bottom: 1px solid #ccc; }
-    table tr th, table tr td {
-      width: 120px;
-      text-align: center; }
 
 .add {
   width: 100px;
   height: 30px;
   margin-left: 40%; }
 
-.dialog {
+.dialog, .roledialog {
   width: 300px;
   height: 400px;
   background-color: #c4e3f3;
@@ -95,15 +123,15 @@ table {
   margin-left: -150px;
   top: 50%;
   margin-top: -200px; }
-  .dialog ul {
+  .dialog ul, .roledialog ul {
     margin-top: 20px;
     margin-left: 50px; }
-    .dialog ul li {
+    .dialog ul li, .roledialog ul li {
       margin-top: 15px; }
-      .dialog ul li span {
+      .dialog ul li span, .roledialog ul li span {
         display: inline-block;
         width: 60px; }
-      .dialog ul li button {
+      .dialog ul li button, .roledialog ul li button {
         width: 60px;
         height: 24px;
         border: 1px solid #ccc;
@@ -135,5 +163,35 @@ table {
     width: 60px;
     margin-left: 5px;
     margin-right: 5px; }
+
+.removePopup {
+  width: 200px;
+  height: 160px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px #999;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 30%; }
+  .removePopup .closed {
+    height: 20px;
+    border-radius: 10px 10px 0 0;
+    background-color: #007aff;
+    color: #fff;
+    font-size: 26px;
+    text-align: right;
+    padding-right: 10px; }
+  .removePopup h4 {
+    text-align: center;
+    line-height: 60px;
+    background-color: #007aff;
+    color: #fff; }
+  .removePopup .sure span {
+    display: inline-block;
+    width: 96px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 16px; }
 
 /*# sourceMappingURL=index.css.map */

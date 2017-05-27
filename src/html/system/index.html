@@ -10,47 +10,17 @@
     <link rel="stylesheet" href="../../css/system/index.css">
 </head>
 <body ng-app="myapp">
-    <div class="content clearfix" ng-controller="sysCon">
-        <div class="right">
-            <div class="right-content">
-                <!--头部-->
-                <div class="title clearfix">
-                    <div class="title-left">
-                        <ul>
-                            <li>个人中心</li>
-                            <li>系统设置</li>
-                        </ul>
-                    </div>
-                    <div class="title-right">
-                        <ul class="dropdown">
-                            <span class="dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">
-                                选项 <span class="caret"></span>
-                            </span>
-                        </ul>
-                    </div>
-                </div>
-                <div ui-view></div>
-            </div>
-        </div>
-        <div class="left">
-            <div class="title">通用权限系统</div>
-            <div class="work">我的工作台</div>
-            <h5 class="can">权限管理</h5>
-            <nav>
-                <ul>
-                    <li ui-sref="add">添加用户</li>
-                    <li class="current" ui-sref="user">用户管理</li>
-                </ul>
-            </nav>
-        </div>
+    <headers></headers>
+    <div ui-view class="content"></div>
 
-    </div>
-
-    <script src="../../js/common/jquery.js"></script>
     <script src="../../js/common/angular.js"></script>
     <script src="../../js/common/angular-ui-router.js"></script>
-    <script src="../../js/system/index.js"></script>
+    <script src="../../js/common/jquery.js"></script>
+    <script>
+        var app = angular.module('myapp',['ui.router']);
+    </script>
     <script src="../../../data/system.js"></script>
-    <script src="../../js/system/page.js"></script>
+    <script src="../../js/system/service.js"></script>
+    <script src="../../js/system/index.js"></script>
 </body>
 </html>

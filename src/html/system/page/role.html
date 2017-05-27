@@ -1,24 +1,25 @@
 <!--用户管理页面-->
 <div class="main">
     <!--用户管理-->
-    <h5>用户管理</h5>
+    <h5>角色管理</h5>
     <!--查询栏-->
     <div class="search">
-        <span>角色</span>
-        <select ng-model="sysRole">
-            <option value="">全部</option>
-            <option value="管理员">管理员</option>
-            <option value="13管理员aaa">13管理员aaa</option>
-            <option value="13管理">13管理</option>
-        </select>
         <span>状态</span>
         <select ng-model="statues">
             <option value="">全部</option>
             <option value="启用">启用</option>
             <option value="禁用">禁用</option>
         </select>
-        <span>登录名</span>
-        <input type="text" ng-model="loginName">
+        <span>角色</span>
+        <select ng-model="sysRole">
+            <option value="">全部</option>
+            <option value="管理员">管理员</option>
+            <option value="管理员0">管理员0</option>
+            <option value="管理2">管理2</option>
+            <option value="管理员1">管理员1</option>
+            <option value="管理员2">管理员2</option>
+            <option value="管理员是">管理员是</option>
+        </select>
         <button ng-click="searchFn()">查询</button>
     </div>
     <!--列表-->
@@ -27,12 +28,9 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>登录名</th>
-                <th>真实姓名</th>
                 <th>角色</th>
-                <th>手机</th>
-                <th>邮箱</th>
                 <th>状态</th>
+                <th>序号</th>
                 <th>创建时间</th>
                 <th>操作</th>
             </tr>
@@ -40,12 +38,9 @@
         <tbody id="tbody">
             <tr ng-repeat="item in cutData">
                 <td>{{item.ID}}</td>
-                <td>{{item.loginname}}</td>
-                <td>{{item.name}}</td>
                 <td>{{item.role}}</td>
-                <td>{{item.telephone}}</td>
-                <td>{{item.email}}</td>
                 <td>{{item.state}}</td>
+                <td>{{item.orders}}</td>
                 <td>{{item.creattime}}</td>
                 <td>
                     <span ng-click="update(item)">修改</span>
@@ -71,4 +66,4 @@
 <!--确定是否删除弹出框-->
 <remove-sure></remove-sure>
 <!--修改弹出框-->
-<update-sure></update-sure>
+<role-sure></role-sure>

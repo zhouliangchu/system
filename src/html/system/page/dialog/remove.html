@@ -1,0 +1,10 @@
+<!--点击删除时确定、取消弹出框指令模板-->
+
+<div class="removePopup" ng-show="popupShow">
+    <p class="closed" ng-click="noFn()">x</p>
+    <h4>确定删除吗？</h4>
+    <p class="sure">
+        <span ng-click="sureFn()">确定</span>
+        <span ng-click="noFn()">取消</span>
+    </p>
+</div>

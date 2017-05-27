@@ -1,0 +1,51 @@
+<!--修改指令模板-->
+<div class="dialog" ng-if="boll">
+    <ul>
+        <li>
+            <span>ID：</span>
+            <input type="text" value="{{tar.ID}}" ng-model="tar.ID" disabled>
+        </li>
+        <li>
+            <span>parentid：</span>
+            <input type="text" value="{{tar.parentid}}" ng-model="tar.parentid" disabled>
+        </li>
+        <li>
+            <span>登录名：</span>
+            <input type="text" value="{{tar.loginname}}" ng-model="tar.loginname">
+        </li>
+        <li>
+            <span>真实姓名：</span>
+            <input type="text" value="{{tar.name}}" ng-model="tar.name">
+        </li>
+        <li>
+            <span>角色：</span>
+            <select ng-model="tar.role">
+                <option>管理员</option>
+                <option>13管理员aaa</option>
+                <option>13管理</option>
+            </select>
+            <!--<input type="text" value="{{tar.role}}" ng-model="tar.role">-->
+        </li>
+        <li>
+            <span>手机：</span>
+            <input type="text" value="{{tar.telephone}}" ng-model="tar.telephone">
+        </li>
+        <li>
+            <span>邮箱：</span>
+            <input type="text" value="{{tar.email}}" ng-model="tar.email">
+        </li>
+        <li>
+            <span>状态：</span>
+            <input type="radio" name="state" ng-change="changeFn('启用')" ng-value="start" ng-model="changeState">启用
+            <input type="radio" name="state" ng-change="changeFn('禁用')" ng-value="stop" ng-model="changeState">禁用
+        </li>
+        <li>
+            <span>创建时间：</span>
+            <input type="text" value="{{tar.creattime}}" ng-model="tar.creattime" disabled>
+        </li>
+        <li>
+            <button ng-click="sure()">确定</button>
+            <button ng-click="no()">取消</button>
+        </li>
+    </ul>
+</div>

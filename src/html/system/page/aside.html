@@ -1,0 +1,21 @@
+<!--侧边栏菜单、一级路由渲染-->
+<aside>
+    <div class="work">
+        <span> > </span>
+        我的工作台
+    </div>
+    <h5 class="can" ng-click="showFn()">
+        <span ng-show="listShow">-</span>
+        <span ng-show="addShow">+</span>
+        {{parentName}}
+    </h5>
+    <nav ng-show="listShow">
+        <ul>
+            <li ng-repeat="item in data">
+                <span></span>
+                <a ui-sref="{{item.route}}">{{item.name}}</a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+<div ui-view class="product"></div>
